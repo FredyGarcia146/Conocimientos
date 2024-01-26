@@ -1,0 +1,57 @@
+
+-- New DBs
+use Excercises
+
+-- New Collection
+
+db.createCollection('Movies')
+db.createCollection('Peoples')
+db.createCollection('Books')
+
+
+-- INSERT Unit
+
+db.Books.insert({nombre: "El Quijote", autor: "Cervantes", ISBN: "123456789"})
+
+
+-- INSERT Multiple "mongoimport" -- fisrt download :"https://www.mongodb.com/try/download/database-tools"
+-- MongoDB Command Line Database Tools Download 
+-- Import data JSON Windows CMD: (Folder : cd ..\bin)
+
+mongoimport --jsonArray --db Excercises --collection Movies --file ...\MongoDB\01_Introduction\Data_JSON\MOVIES_DATA.json
+mongoimport --jsonArray --db Excercises --collection Peoples --file ...\MongoDB\01_Introduction\Data_JSON\PEOPLES_DATA.json
+
+
+-- VIEW Documents
+
+db.Movies.find()
+db.Peoples.find()
+
+-- VIEW Documents and filters  And 
+
+db.Movies.find({genre:"thriller",duration:26})
+
+
+-- VIEW Documents and filters  Or
+ 
+db.Movies.find({ $or: [ {genre:"thriller"},{genre:"action"} ] });
+
+
+-- DELETE filter Documents 
+db.Movies.remove({genre:"thriller",duration:26},0)
+
+
+-- DELETE ALL Documents Collection
+db.Movies.remove({},0)
+db.Peoples.remove({},0)
+db.Books.remove({},0)
+
+-- Drop Collection
+
+db.Movies.drop()
+db.Peoples.drop()
+db.Books.drop()
+
+-- Drop DataBase
+
+db.dropDatabase()
