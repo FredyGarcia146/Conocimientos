@@ -1,1 +1,0 @@
-mongoimport --jsonArray --db Excercises --collection Peoples --file C:\Users\and14\Desktop\Proyectos\Programacion\MongoDB\01_Introduction\Data_JSON\PEOPLES_DATA.json
