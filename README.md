@@ -1,2 +1,2 @@
 # LEARNING
-Collection of notes and projects on various languages ​​and tools
+Collection of notes and projects Mongo DB
